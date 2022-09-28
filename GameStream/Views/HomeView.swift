@@ -16,7 +16,7 @@ struct HomeView: View {
         UITabBar.appearance().isTranslucent = true
     }
     
-    @State var tabSelected: Int = 2
+    @State private var tabSelected: Int = 2
     var body: some View {
         TabView(selection: $tabSelected){
             Text("Pantalla perfil")
@@ -37,7 +37,7 @@ struct HomeView: View {
                     Text("home")
                 }.tag(2)
             
-            Text("Pantalla favoritos")
+            FavoritesView()
                 .tabItem{
                     Image(systemName: "heart")
                     Text("Favoritos")
@@ -51,30 +51,29 @@ struct Home: View {
     var body: some View {
         ZStack{
             Color("general-background-color").ignoresSafeArea()
-            VStack{
-                Image("appLogo")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 250)
-                    .padding(.bottom, 30)
+            ScrollView{
+                VStack{
+                    Image("appLogo")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 250)
+                        .padding(.bottom, 30)
 
-                SearchBarView().padding(.bottom)
-                PopularSection(urlVideos: urlVideos).padding(.bottom)
-                CarrouselIcons(title: "CATEGORIAS SUGERIDAS PARA TI", imageNames: ["fps", "rpg", "open-world"]).padding(.bottom)
-                CarrouselImages(title: "RECOMENDADOS PARA TI", urlVideos: urlVideos)
-                
-            }.padding(.horizontal, 20)
-        }.navigationBarBackButtonHidden(true).navigationBarHidden(true)
+                    SearchBarView().padding(.bottom)
+                    PopularSection().padding(.bottom)
+                    CarrouselIcons(title: "CATEGORIAS SUGERIDAS PARA TI", imageNames: ["fps", "rpg", "open-world"]).padding(.bottom)
+                    CarrouselImages(title: "RECOMENDADOS PARA TI", urlVideos: urlVideos)
+                }.padding(.horizontal, 20)
+            }
+        }.navigationBarHidden(true).navigationBarTitle("", displayMode: .inline).navigationBarBackButtonHidden(true)
     }
 }
 
 struct PopularSection: View {
-    init(urlVideos: [String]) {
-        self.urlVideos = urlVideos
-    }
-    @State var url = "https://cdn.cloudflare.steamstatic.com/steam/apps/256658589/movie480.mp4"
-    @State var isPlayerActive = false
-    var urlVideos: [String]
+    @State private var url = "https://cdn.cloudflare.steamstatic.com/steam/apps/256658589/movie480.mp4"
+    @State private var isPlayerActive = false
+    @StateObject var searchedGame = SearchGame()
+    @StateObject var videoGamesProvider = ViewModel()
     var body: some View {
         VStack{
             Text("LOS MÁS POPULARES").font(.title3).foregroundColor(.white).bold().frame(minWidth: 0, maxWidth: .infinity, alignment: .leading).padding(.top)
@@ -83,16 +82,18 @@ struct PopularSection: View {
                 Button(action: { self.playVideo() }, label: {
                     VStack(spacing: 0){
                         Image("the-witcher-3").resizable().scaledToFill()
-                        Text("The Witcher 3: Wild Hunt").bold().foregroundColor(.white).frame(minWidth: 0, maxWidth: .infinity, alignment: .leading).padding([.top, .bottom, .leading]).background(Color("blue-gray"))
+                        Text("The Witcher 3: Wild Hunt").bold().modifier(GamesTitle())
                     }
                 })
                 Image(systemName: "play.circle.fill").resizable().frame(width: 50, height: 50).foregroundColor(.white)
             }.frame(minWidth: 0, maxWidth: .infinity)
         }
         NavigationLink(
-            isActive: $isPlayerActive,
+            isActive: $videoGamesProvider.gameViewIsActive,
             destination: {
-                VideoPlayer(player: AVPlayer(url: URL(string: urlVideos[0])!)).frame(width: 400, height: 300)
+                if searchedGame.searchedGame != nil {
+                    GameView(game: searchedGame.searchedGame!)
+                }
             },
             label: {
                 EmptyView()
@@ -101,7 +102,8 @@ struct PopularSection: View {
     }
     
     func playVideo() -> Void {
-        isPlayerActive = true
+        searchedGame.search(gameName: "The Witcher 3: Wild Hunt")
+        videoGamesProvider.gameViewIsActive = true
     }
 }
 

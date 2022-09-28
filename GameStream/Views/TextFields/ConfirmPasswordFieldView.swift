@@ -15,7 +15,7 @@ struct ConfirmPasswordFieldView: View {
     }
     
     var title: String
-    @State var confirmPassword = ""
+    @State private var confirmPassword = ""
     var body: some View {
         VStack(alignment: .leading){
             Text(title).foregroundColor(.white).bold().padding(.top, 10)

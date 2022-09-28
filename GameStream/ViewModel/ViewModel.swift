@@ -10,6 +10,7 @@ import Foundation
 class ViewModel: ObservableObject {
     // Esta es la manera como se conecta el Model con el View Model y el [@Published] quiere decir que se va a "publicar" a cualquiera que quiera escuchar
     @Published var gamesInfo = [Game]()
+    @Published var gameViewIsActive = false
     
     init() {
         let url = URL(string: "https://gamestream-api.herokuapp.com/api/games")!

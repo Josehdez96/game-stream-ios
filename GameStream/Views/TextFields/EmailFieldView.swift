@@ -14,7 +14,7 @@ struct EmailFieldView: View {
     }
     
     var title: String
-    @State var email = ""
+    @State private var email = ""
     var body: some View {
         VStack(alignment: .leading){
             Text(title).foregroundColor(Color("dark-cian")).bold()

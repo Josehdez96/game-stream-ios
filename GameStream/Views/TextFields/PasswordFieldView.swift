@@ -15,7 +15,7 @@ struct PasswordFieldView: View {
     }
     
     var title: String
-    @State var password = ""
+    @State private var password = ""
     var body: some View {
         VStack(alignment: .leading){
             Text(title).foregroundColor(.white).bold().padding(.top, 10)

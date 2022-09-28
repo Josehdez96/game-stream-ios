@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var favoriteGames = FavoriteGames()
     var body: some View {
         NavigationView {
             ZStack{
@@ -26,12 +27,12 @@ struct ContentView: View {
                     LogInAndRegisterView()
                 }
             }.navigationBarHidden(true)
-        }
+        }.environmentObject(favoriteGames)
     }
 }
 
 struct LogInAndRegisterView: View {
-    @State var signInView = true
+    @State private var signInView = true
     var body: some View {
         VStack{
             HStack{

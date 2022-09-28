@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct LogInView: View {
-    @State var email = ""
-    @State var password = ""
-    @State var isHomeViewActive = false
+    @State private var email = ""
+    @State private var password = ""
+    @State private var isHomeViewActive = false
     var body: some View {
         ScrollView{
             VStack(spacing: 10){

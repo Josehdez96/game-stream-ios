@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct RegisterView: View {
-    @State var email = ""
-    @State var password = ""
-    @State var confirmPassword = ""
+    @State private var email = ""
+    @State private var password = ""
+    @State private var confirmPassword = ""
     var body: some View {
         ScrollView{
             VStack(spacing: 10){
