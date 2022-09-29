@@ -5,6 +5,12 @@
 //  Created by owner on 15/09/22.
 //
 
+/*
+ Falta por ajustar
+ 1. La espera en la busqueda de un juego con la SearchBar
+ 2. Gestionar el guardado de likes en cada juego
+ */
+
 import SwiftUI
 
 struct ContentView: View {

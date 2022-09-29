@@ -14,12 +14,13 @@ struct HomeView: View {
         UITabBar.appearance().backgroundColor = UIColor(Color("blue-gray"))
         UITabBar.appearance().unselectedItemTintColor = UIColor.gray
         UITabBar.appearance().isTranslucent = true
+        UINavigationBar.appearance().tintColor = .white
     }
     
     @State private var tabSelected: Int = 2
     var body: some View {
         TabView(selection: $tabSelected){
-            Text("Pantalla perfil")
+            ProfileView()
                 .tabItem{
                     Image(systemName: "person")
                     Text("Perfil")

@@ -1,32 +1,31 @@
 //
-//  PasswordFieldView.swift
+//  GenericTextField.swift
 //  GameStream
 //
-//  Created by owner on 19/09/22.
+//  Created by owner on 28/09/22.
 //
 
 import SwiftUI
 
-struct PasswordFieldView: View {
-    
-    init(title: String, password: String, initialText: String = "*******") {
+struct GenericTextFieldView: View {
+    init(title: String, initialText: String) {
         self.title = title
-        self.password = password
         self.initialText = initialText
     }
     
     var title: String
     var initialText: String
-    @State private var password = ""
+    @State private var name = ""
     var body: some View {
         VStack(alignment: .leading){
-            Text(title).foregroundColor(.white).bold().padding(.top, 10)
+            Text(title).foregroundColor(.white).bold()
+            
             
             ZStack(alignment: .leading){
-                if password.isEmpty {
+                if name.isEmpty {
                     Text(initialText).font(.caption).foregroundColor(.gray)
                 }
-                SecureField("", text: $password).foregroundColor(.white)
+                TextField("", text: $name).foregroundColor(.white)
             }
             
             Divider().frame(height: 1).background(.white).padding(.top, -8)
@@ -34,8 +33,8 @@ struct PasswordFieldView: View {
     }
 }
 
-struct PasswordFieldView_Previews: PreviewProvider {
+struct GenericTextField_Previews: PreviewProvider {
     static var previews: some View {
-        PasswordFieldView(title: "", password: "")
+        GenericTextFieldView(title: "", initialText: "")
     }
 }
