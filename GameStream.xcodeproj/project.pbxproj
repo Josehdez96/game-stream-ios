@@ -19,6 +19,8 @@
 		EB3B953128E50C330025B0C6 /* GenericTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3B953028E50C330025B0C6 /* GenericTextFieldView.swift */; };
 		EB3B953328E5210E0025B0C6 /* SaveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3B953228E5210E0025B0C6 /* SaveData.swift */; };
 		EB3B953528E5F15E0025B0C6 /* SUImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3B953428E5F15E0025B0C6 /* SUImagePickerView.swift */; };
+		EB3B953728E67EB10025B0C6 /* OffsetPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3B953628E67EB10025B0C6 /* OffsetPosition.swift */; };
+		EB3B953928E6848A0025B0C6 /* MediaQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3B953828E6848A0025B0C6 /* MediaQuery.swift */; };
 		EBFA327928D3870E005BCF82 /* GameStreamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFA327828D3870E005BCF82 /* GameStreamApp.swift */; };
 		EBFA327B28D3870E005BCF82 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFA327A28D3870E005BCF82 /* ContentView.swift */; };
 		EBFA327D28D3870F005BCF82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBFA327C28D3870F005BCF82 /* Assets.xcassets */; };
@@ -51,6 +53,8 @@
 		EB3B953028E50C330025B0C6 /* GenericTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTextFieldView.swift; sourceTree = "<group>"; };
 		EB3B953228E5210E0025B0C6 /* SaveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveData.swift; sourceTree = "<group>"; };
 		EB3B953428E5F15E0025B0C6 /* SUImagePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUImagePickerView.swift; sourceTree = "<group>"; };
+		EB3B953628E67EB10025B0C6 /* OffsetPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetPosition.swift; sourceTree = "<group>"; };
+		EB3B953828E6848A0025B0C6 /* MediaQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaQuery.swift; sourceTree = "<group>"; };
 		EBFA327528D3870E005BCF82 /* GameStream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameStream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBFA327828D3870E005BCF82 /* GameStreamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStreamApp.swift; sourceTree = "<group>"; };
 		EBFA327A28D3870E005BCF82 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -114,6 +118,8 @@
 				EB3B952928E4A4740025B0C6 /* Modifiers */,
 				EBFA327A28D3870E005BCF82 /* ContentView.swift */,
 				EBFA327828D3870E005BCF82 /* GameStreamApp.swift */,
+				EB3B953628E67EB10025B0C6 /* OffsetPosition.swift */,
+				EB3B953828E6848A0025B0C6 /* MediaQuery.swift */,
 				EBFA328A28D3B542005BCF82 /* Views */,
 				EBFA32A628DBA7CD005BCF82 /* Models */,
 				EBFA32A728DBA7DB005BCF82 /* ViewModel */,
@@ -283,6 +289,7 @@
 				EBFA328928D3B4C8005BCF82 /* RegisterView.swift in Sources */,
 				EBFA32A528DBA66E005BCF82 /* GamesView.swift in Sources */,
 				EB3B953128E50C330025B0C6 /* GenericTextFieldView.swift in Sources */,
+				EB3B953728E67EB10025B0C6 /* OffsetPosition.swift in Sources */,
 				EB30EF7628DE1A46001C54E0 /* GameView.swift in Sources */,
 				EBFA32A128DB853B005BCF82 /* CarrouselImages.swift in Sources */,
 				EBFA328F28D81C70005BCF82 /* SocialNetworkButtonView.swift in Sources */,
@@ -296,6 +303,7 @@
 				EB30EF7828E22830001C54E0 /* SearchGame.swift in Sources */,
 				EBFA329C28DA1B3C005BCF82 /* SearchBarView.swift in Sources */,
 				EBFA327B28D3870E005BCF82 /* ContentView.swift in Sources */,
+				EB3B953928E6848A0025B0C6 /* MediaQuery.swift in Sources */,
 				EB3B952D28E4CC570025B0C6 /* ProfileView.swift in Sources */,
 				EB3B952F28E50A830025B0C6 /* EditProfileView.swift in Sources */,
 				EB30EF7428DE1A27001C54E0 /* GameViewObject.swift in Sources */,

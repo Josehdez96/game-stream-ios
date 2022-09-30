@@ -30,8 +30,9 @@ struct CarrouselIcons: View {
 struct CarrouselIconsItem: View {
     init(imageName: String) {
         self.imageName = imageName
+        let device = UIDevice.current.name // Nos devuelve un String diciendo que dispositvo es con su versión, mientras que [UIDevice.current.model] nos dice que modelo es (iphone, mac, ipad, etc)
+        print("Nuestro dispositivo actual es: \(device)")
     }
-    
     var imageName: String
     var body: some View {
         HStack{
